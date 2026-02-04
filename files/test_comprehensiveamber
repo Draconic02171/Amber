@@ -1,0 +1,55 @@
+# Test: Comprehensive Mixed Operations
+# This test combines arithmetic, comparison, and jumps
+
+# Test 1: Calculate (a + b) * c where a=3, b=7, c=2
+PUSH 3
+PUSH 7
+ADD
+PUSH 2
+MUL
+PRINT
+
+# Test 2: Check if (x * y) > 50, where x=7, y=8
+PUSH 7
+PUSH 8
+MUL
+PUSH 50
+MORE
+JUMP_IF_FALSE <not_greater>
+PUSH 9999
+PRINT
+JUMP <continue>
+<not_greater>
+PUSH 1111
+PRINT
+<continue>
+
+# Test 3: Nested arithmetic: ((10 + 5) * 2) - 10 = 20
+PUSH 10
+PUSH 5
+ADD
+PUSH 2
+MUL
+PUSH 10
+SUB
+PRINT
+
+# Test 4: Test division with comparison
+# Calculate 100 / 4 and check if result == 25
+PUSH 100
+PUSH 4
+DIV
+PUSH 25
+EQUAL
+JUMP_IF_FALSE <not_25>
+PUSH 777
+PRINT
+<not_25>
+
+# Test 5: Multiple duplications and operations
+PUSH 5
+DUP
+DUP
+ADD
+ADD
+PRINT

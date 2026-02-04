@@ -1,0 +1,44 @@
+# Test: Comparison Operations
+# This test covers EQUAL, LESS, MORE
+
+# Test 1: EQUAL - true case (5 == 5 should give 1)
+PUSH 5
+PUSH 5
+EQUAL
+PRINT
+
+# Test 2: EQUAL - false case (5 == 3 should give 0)
+PUSH 5
+PUSH 3
+EQUAL
+PRINT
+
+# Test 3: LESS - true case (3 < 10 should give 1)
+PUSH 3
+PUSH 10
+LESS
+PRINT
+
+# Test 4: LESS - false case (10 < 3 should give 0)
+PUSH 10
+PUSH 3
+LESS
+PRINT
+
+# Test 5: MORE - true case (15 > 7 should give 1)
+PUSH 15
+PUSH 7
+MORE
+PRINT
+
+# Test 6: MORE - false case (5 > 20 should give 0)
+PUSH 5
+PUSH 20
+MORE
+PRINT
+
+# Test 7: Chained comparison (10 == 10) should give 1
+PUSH 10
+PUSH 10
+EQUAL
+PRINT

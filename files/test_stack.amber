@@ -1,0 +1,34 @@
+# Test: Stack Operations
+# This test covers PUSH, POP, DUP
+
+# Test 1: Basic PUSH and PRINT
+PUSH 42
+PRINT
+
+# Test 2: DUP test (should print 100 twice)
+PUSH 100
+DUP
+PRINT
+PRINT
+
+# Test 3: POP test (push 3 values, pop 1, print should show second value)
+PUSH 10
+PUSH 20
+PUSH 30
+POP
+PRINT
+
+# Test 4: Multiple DUP
+PUSH 7
+DUP
+DUP
+ADD
+ADD
+PRINT
+
+# Test 5: Stack manipulation
+PUSH 5
+PUSH 10
+DUP
+ADD
+PRINT

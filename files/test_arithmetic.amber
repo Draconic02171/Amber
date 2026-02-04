@@ -1,0 +1,42 @@
+# Test: Basic Arithmetic Operations
+# This test covers PUSH, ADD, SUB, MUL, DIV, and PRINT
+
+# Test 1: Addition (5 + 3 = 8)
+PUSH 5
+PUSH 3
+ADD
+PRINT
+
+# Test 2: Subtraction (10 - 4 = 6)
+PUSH 10
+PUSH 4
+SUB
+PRINT
+
+# Test 3: Multiplication (7 * 6 = 42)
+PUSH 7
+PUSH 6
+MUL
+PRINT
+
+# Test 4: Division (20 / 4 = 5)
+PUSH 20
+PUSH 4
+DIV
+PRINT
+
+# Test 5: Complex expression: (10 + 5) * 2 = 30
+PUSH 10
+PUSH 5
+ADD
+PUSH 2
+MUL
+PRINT
+
+# Test 6: Another complex: (100 - 20) / 4 = 20
+PUSH 100
+PUSH 20
+SUB
+PUSH 4
+DIV
+PRINT

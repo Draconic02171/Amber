@@ -1,0 +1,44 @@
+# Test: Conditional Logic (if-else simulation)
+# This demonstrates conditional branching
+
+# Test 1: If x > 10, print 1, else print 0
+# Let x = 15
+PUSH 15
+PUSH 10
+MORE
+JUMP_IF_FALSE <else1>
+PUSH 1
+PRINT
+JUMP <end1>
+<else1>
+PUSH 0
+PRINT
+<end1>
+
+# Test 2: If x == 5, print 100, else print 200
+# Let x = 5
+PUSH 5
+PUSH 5
+EQUAL
+JUMP_IF_FALSE <else2>
+PUSH 100
+PRINT
+JUMP <end2>
+<else2>
+PUSH 200
+PRINT
+<end2>
+
+# Test 3: If x < 0, print -1, else print 1
+# Let x = -5
+PUSH -5
+PUSH 0
+LESS
+JUMP_IF_FALSE <else3>
+PUSH -1
+PRINT
+JUMP <end3>
+<else3>
+PUSH 1
+PRINT
+<end3>

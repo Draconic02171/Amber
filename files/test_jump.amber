@@ -1,0 +1,37 @@
+# Test: JUMP Operations
+# This test covers JUMP, JUMP_IF_TRUE, JUMP_IF_FALSE
+
+# Test 1: Simple JUMP
+PUSH 100
+JUMP <skip>
+PUSH 999
+<skip>
+PRINT
+
+# Test 2: JUMP_IF_FALSE - condition is false, so jump
+PUSH 5
+PUSH 10
+EQUAL
+JUMP_IF_FALSE <not_equal>
+PUSH 1
+PRINT
+<not_equal>
+PUSH 0
+PRINT
+
+# Test 3: JUMP_IF_FALSE - condition is true, so don't jump
+PUSH 7
+PUSH 7
+EQUAL
+JUMP_IF_FALSE <skip2>
+PUSH 777
+PRINT
+<skip2>
+
+# Test 4: Loop-like structure (print numbers using jumps)
+PUSH 1
+PRINT
+PUSH 2
+PRINT
+PUSH 3
+PRINT
