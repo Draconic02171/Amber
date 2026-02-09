@@ -463,41 +463,41 @@ void load(double address) {
 }
 
 void add() {
-    double a = pop();
-    double b = pop();
-    push(b + a);
+    double right = pop();
+    double left = pop();
+    push(left + right);
 }
 void subtract() {
-    double a = pop();
-    double b = pop();
-    push(b - a);
+    double right = pop();
+    double left = pop();
+    push(left - right);
 }
 void multiply() {
-    double a = pop();
-    double b = pop();
-    push(b * a);
+    double right = pop();
+    double left = pop();
+    push(left * right);
 }
 void divine() {
-    double a = pop();
-    double b = pop();
-    if (a == 0) RaiseError("Arithmetic Error", "Division by zero");
-    push(b / a);
+    double right = pop();
+    double left = pop();
+    if (right == 0) RaiseError("Arithmetic Error", "Division by zero");
+    push(left / right);
 }
 
 void equal() {
-    double a = pop();
-    double b = pop();
-    push(a == b ? 1 : 0);
+    double right = pop();
+    double left = pop();
+    push(left == right ? 1 : 0); 
 }
 void more() {
-    double a = pop();
-    double b = pop();
-    push(a > b ? 1 : 0);
+    double right = pop();
+    double left = pop();
+    push(left > right ? 1 : 0); 
 }
 void less() {
-    double a = pop();
-    double b = pop();
-    push(a < b ? 1 : 0);
+    double right = pop();
+    double left = pop();
+    push(left < right ? 1 : 0); 
 }
 void jump(double line) {
     ROMPointer = (int) line;
@@ -509,12 +509,6 @@ void jumpIfTrue(double line) {
 void jumpIfFalse(double line) {
     double value = pop();
     if (value == 0) {jump(line);}
-}
-void call(double line) {
-    jump(line);
-}
-void _return(double line) {
-
 }
 
 void read() {
