@@ -3,8 +3,6 @@
 #include <string.h>
 #include <math.h>
 
-
-
 #define RESET         "\x1b[0m"
 #define BOLD          "\x1b[1m"
 #define DIM           "\x1b[2m"
@@ -182,14 +180,13 @@ int FetchInstructions(FILE* file) {
 
         int parsed = sscanf(buffer, "%s %lf", temp , &ROM[count].operand); // check if it parsed successfully or not, if yes how many
 
-        temp[strcspn(temp, "\n")] = '\0';
+        // temp[strcspn(temp, "\n")] = '\0';
 
         if (parsed < 1 || temp[0] == '#') continue; //skip an empty line or comment line
 
         if (!strcmp(temp, "PUSH"))
         {   if (parsed == 1) {
 
-                //trying to read for finding character
                 char character[5];
                 int success = 0;
                 
@@ -198,19 +195,31 @@ int FetchInstructions(FILE* file) {
                     int _charIndex = 0;
                     int startRead = 0;
 
-                    while (buffer[_index] != '\n') {
+                    while (buffer[_index] != '\n' && buffer[_index] != '\0') {
 
                         if (_index >= sizeof(buffer) || _charIndex >= sizeof(character)) {break;}
-                        
-                        if (buffer[_index] == '\'') {startRead = 1;}
-                        if (!startRead) {_index ++; continue;}
+
+                        if (buffer[_index] == '\'' && !startRead) {
+                            startRead = 1;
+                            character[_charIndex] = buffer[_index];
+                            _charIndex++;
+                            _index++;
+                            continue;
+                        }
+
+                        if (buffer[_index] == '\'' && startRead) {
+                            character[_charIndex] = buffer[_index];
+                            _charIndex++;
+                            break;
+                        }
+
+                        if (!startRead) {_index++; continue;}
 
                         character[_charIndex] = buffer[_index];
-
-                        _charIndex ++;
-                        _index ++;
-
+                        _charIndex++;
+                        _index++;
                     }
+                    character[_charIndex] = '\0';
                     success = 1;
                 }
 
