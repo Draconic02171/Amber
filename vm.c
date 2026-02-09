@@ -3,14 +3,6 @@
 #include <string.h>
 #include <math.h>
 
-//macro for sleep
-#ifdef _WIN32
-    //use windows bed
-    #include <windows.h>
-#else
-    //use unix bed
-    #include <unistd.h>
-#endif
 
 
 #define RESET         "\x1b[0m"
