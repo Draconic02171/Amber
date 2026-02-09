@@ -1,0 +1,59 @@
+{
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+    "name": "Amber",
+    "patterns": [
+        {
+            "comment": "Python-style comments",
+            "name": "comment.line.number-sign.amber",
+            "match": "#.*$"
+        },
+        {
+            "comment": "Numeric Constants",
+            "name": "constant.numeric.amber",
+            "match": "\\b[0-9]+\\b"
+        },
+        {
+            "comment": "Functions (starts with ::)",
+            "name": "entity.name.function.amber",
+            "match": "::[a-zA-Z_][a-zA-Z0-9_]*"
+        },
+        {
+            "comment": "Jump Labels (inside < >)",
+            "name": "variable.label.amber",
+            "match": "<[a-zA-Z_][a-zA-Z0-9_]*>"
+        },
+        {
+            "comment": "Stack and Memory Operations",
+            "name": "keyword.control.stack.amber",
+            "match": "\\b(PUSH|POP|DUP|SWAP|LOAD|STORE)\\b"
+        },
+        {
+            "comment": "Arithmetic and Logical Operators",
+            "name": "entity.name.function.arithmetic.amber",
+            "match": "\\b(ADD|SUB|MUL|DIV|EQUAL|LESS|MORE)\\b"
+        },
+        {
+            "comment": "Control Flow and Branching",
+            "name": "constant.language.control.amber",
+            "match": "\\b(JUMP|JUMP_IF_TRUE|JUMP_IF_FALSE|LABEL)\\b"
+        },
+        {
+            "comment": "I/O Operations",
+            "name": "entity.name.tag.io.amber",
+            "match": "\\b(READ|PRINT|WRITE)\\b"
+        },
+		{
+		    "comment": "Single quoted strings",
+		    "name": "string.quoted.single.amber",
+		    "begin": "'",
+		    "end": "'",
+		    "patterns": [
+		        {
+		            "name": "constant.character.escape.amber",
+		            "match": "\\\\."
+		        }
+		    ]
+		}
+    ],
+    "scopeName": "source.amber"
+}

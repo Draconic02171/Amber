@@ -1,0 +1,92 @@
+{
+  "PUSH": {
+    "prefix": "PUSH",
+    "body": "PUSH ${1:constant}",
+    "description": "push a literal number into the stack"
+  },
+  "POP": {
+    "prefix": "POP",
+    "body": "POP",
+    "description": "remove the top value of the stack"
+  },
+  "DUP": {
+    "prefix": "DUP",
+    "body": "DUP",
+    "description": "copy the top value"
+  },
+  "SWAP": {
+    "prefix": "SWAP",
+    "body": "SWAP",
+    "description": "swap 2 values"
+  },
+  "LOAD": {
+    "prefix": "LOAD",
+    "body": "LOAD ${1:index}",
+    "description": "read vars[index] → push to stack"
+  },
+  "STORE": {
+    "prefix": "STORE",
+    "body": "STORE ${1:index}",
+    "description": "pop value from stack → write to vars[index]"
+  },
+  "ADD": {
+    "prefix": "ADD",
+    "body": "ADD",
+    "description": "pop 2 values and push addition result of those values"
+  },
+  "SUB": {
+    "prefix": "SUB",
+    "body": "SUB",
+    "description": "pop 2 values and push subtraction result of those values"
+  },
+  "MUL": {
+    "prefix": "MUL",
+    "body": "MUL",
+    "description": "pop 2 values and push multiplication result of those values"
+  },
+  "DIV": {
+    "prefix": "DIV",
+    "body": "DIV",
+    "description": "pop 2 values and push division result of those values"
+  },
+  "EQUAL": {
+    "prefix": "EQUAL",
+    "body": "EQUAL",
+    "description": "pop 2 values and push 1 (true) or 0 (false)"
+  },
+  "LESS": {
+    "prefix": "LESS",
+    "body": "LESS",
+    "description": "pop 2 values and push 1 (true) or 0 (false)"
+  },
+  "MORE": {
+    "prefix": "MORE",
+    "body": "MORE",
+    "description": "pop 2 values and push 1 (true) or 0 (false)"
+  },
+  "JUMP": {
+    "prefix": "JUMP",
+    "body": "JUMP <${1:label}>",
+    "description": "set instruction pointer to <line>"
+  },
+  "JUMP_IF_TRUE": {
+    "prefix": "JUMP_IF_TRUE",
+    "body": "JUMP_IF_TRUE <${1:label}>",
+    "description": "pop value if value == 1, jump else continue"
+  },
+  "JUMP_IF_FALSE": {
+    "prefix": "JUMP_IF_FALSE",
+    "body": "JUMP_IF_FALSE <${1:label}>",
+    "description": "pop value if value == 0, jump else continue"
+  },
+  "READ": {
+    "prefix": "READ",
+    "body": "READ",
+    "description": "read a value from standard IO (terminal)"
+  },
+  "PRINT": {
+    "prefix": "PRINT",
+    "body": "PRINT",
+    "description": "just print the top value from the stack duh"
+  }
+}

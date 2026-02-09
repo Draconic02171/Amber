@@ -1,0 +1,29 @@
+{
+  "name": "amberlang",
+  "displayName": "AmberLang",
+  "description": "A language mode for draconic's VM \"Amber\"",
+  "version": "1.0.0",
+  "engines": {
+    "vscode": "^1.107.1"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "amber",
+      "aliases": ["Amber", "amber"],
+      "extensions": [".amber"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "amber",
+      "scopeName": "source.amber",
+      "path": "./syntaxes/amber.tmLanguage.json"
+    }],
+    "snippets": [{
+        "language": "amber",
+        "path": "./snippets.json"
+    }]
+  }
+}
