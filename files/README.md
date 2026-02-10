@@ -144,24 +144,6 @@ gcc -o vm vm.c -lm
 # etc...
 ```
 
-## Test Coverage
-
-The test suite covers:
-- ✓ PUSH - Push values to stack
-- ✓ POP - Remove top value
-- ✓ DUPLICATE - Copy top value
-- ✓ ADD - Addition
-- ✓ SUB - Subtraction
-- ✓ MUL - Multiplication
-- ✓ DIV - Division
-- ✓ EQUAL - Equality comparison
-- ✓ LESS - Less than comparison
-- ✓ MORE - Greater than comparison
-- ✓ JUMP - Unconditional jump
-- ✓ JUMP_IF_FALSE - Conditional jump
-- ✓ PRINT - Print top of stack
-- ✓ Labels - Jump targets
-
 ## Notes
 
 - Each test file is self-contained and can be run independently
