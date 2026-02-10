@@ -27,16 +27,12 @@ I made this language for testing, experimenting, and prepare myself for building
     JUMP_IF_TRUE,          //<label>       //= pop value if value == 1, jump else continue
     JUMP_IF_FALSE,         //<label>       //= pop value if value == 0, jump else continue
 //
-    CALL,                  //<label>       //= calling a function
-//
     READ,                                  //= read a value from standard IO (terminal)
     PRINT,                                 //= just print the top value from the stack duh
     WRITE,                                 //= converting a top value into a ascii code and print it out
-    SLEEP,                  unsed          //= pop and sleep at second rate of the pop value
 //
 // Markers
     LABEL,                                 //= serves as a marker for JUMP, no real use in code
-    CALL_LABEL,             unsed          //= serves as a marker for JUMP, no real use in code
 ```
 
 How to write a jump?
