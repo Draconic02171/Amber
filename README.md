@@ -1,7 +1,14 @@
 # Amber 🌱
-### An intermediate representation language made for educational and experimental.
+### A low-level, stack-based intermediate representation (IR) and virtual machine written in C for educational and experimental.
 
-I made this language for testing, experimenting, and prepare myself for building a refined version of VM for my high level interpret language
+I built this project as a technical "proof of concept" to:
+
+>- Experiment with manual stack management and instruction decoding in C.
+>- Understand low-level control flow and jump-based logic.
+>- Prototype a backend for my upcoming high-level language, Resin.
+>
+
+Amber operates as a Stack Machine (similar to the JVM). It uses a double-pass execution model where instructions like PUSH, DUP, and EQUAL manipulate a data stack, while labels provide the targets for conditional jumps.
 
 ``` c 
 //Instructions
@@ -64,6 +71,23 @@ JUMP <comp>
 
 <end>
 PRINT
+```
+
+### example code
+```c
+counting program
+PUSH 5 #start value
+
+<SubAndComp>
+PRINT
+PUSH 1 
+SUB #subtract 1
+
+DUP
+PUSH 0
+EQUAL
+JUMP_IF_FALSE <SubAndComp>
+
 ```
 
 to run, simply run
